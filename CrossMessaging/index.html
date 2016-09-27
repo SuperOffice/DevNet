@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sample application for Cross Messaging for SuperOffice CRM</title>
+</head>
+
+<body>
+    <div id="refresh">Refresh window</div>
+    <div id="soprotocol">Execute soprotocol</div>
+
+    <script type="text/javascript" src="SoClientCrossmessaging.js"></script>
+    <script type="text/javascript">
+        
+        function clickRefresh(ev) {            
+            SuperOffice.ClientCrossMessaging.refresh();
+        }
+
+        function clickSoProtocol(ev) {            
+            SuperOffice.ClientCrossMessaging.executeSoProtocol("contact.main?contact_id=10");
+        }
+        
+        window.onload = function() {
+            // Link up the event handlers
+            document.getElementById("refresh").onclick = clickRefresh;
+            document.getElementById("soprotocol").onclick = clickSoProtocol; 
+        };
+
+    </script>
+</body>
+
+</html>
