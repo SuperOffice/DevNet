@@ -59,7 +59,7 @@ namespace LearnContinuousDatabase
         static StepInfo [] ApplySteps(string assembly, StepInfo[] steps, bool uninstall = false)
         {
             var appDomain = new ContinuousDatabaseAppDomainProxy();
-            return appDomain.ApplySteps(assembly, ConnectionString, Prefix, Major, Minor, null, steps.ToArray(), uninstall);
+            return appDomain.ApplySteps(assembly, ConnectionString, Prefix, Major, Minor, null, steps, uninstall);
         }
     }
 }

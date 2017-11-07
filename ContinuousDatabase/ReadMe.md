@@ -18,7 +18,11 @@ Learn more about SuperOffice Continuous Database:
 
 ## ExampleDictionarySteps
 
-Contains two classes that pertain to one DictionaryStep "DemoFeature".
+Contains two classes that pertain to one DictionaryStep "DemoFeature". 
+
+All new DictionarySteps must begin with StepNumber 1. Each subsequent change will be applied in a new class with the same DictionaryAttribute name, where the StepNumber is incremented with each change. The second change StepNumber will therefore be "2".
+
+Each DictionaryStep can have one "uninstaller", and this is indicated with the StepNumber equal to 2147483647, or in C# int.MaxValue. A DictionaryStep with StepNumber equal to int.MaxValue is expected to undue all changes performed by previous DictionarySteps of the same name.
 
 1. DemoClass1 adds one new table "Demo" with several fields.
 2. DemoClassUninstall drops the table "Demo"
@@ -63,7 +67,7 @@ static StepInfo [] GetSteps(string assemblyName)
 static StepInfo [] ApplySteps(string assembly, StepInfo[] steps, bool uninstall = false)
 {
     var appDomain = new ContinuousDatabaseAppDomainProxy();
-    return appDomain.ApplySteps(assembly, ConnectionString, Prefix, Major, Minor, null, steps.ToArray(), uninstall);
+    return appDomain.ApplySteps(assembly, ConnectionString, Prefix, Major, Minor, null, steps, uninstall);
 }
 ```
 
