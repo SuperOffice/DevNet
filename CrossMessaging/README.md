@@ -18,5 +18,5 @@ There are two commands which are supported:
 * Call the methods SuperOffice.ClientCrossMessaging.refresh/executeSoProtocol when neccessary
 
 # Availability
-Note that this functionality is currently not available, but will be made available in Online on the next release in October 2016. 
+Note that this functionality was made available from version 8.1, released october 2016.
 
