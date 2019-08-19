@@ -10,7 +10,7 @@ There are two commands which are supported:
 # Sample instructions 
 * Add a web panel to your SuperOffice CRM installation linked to index.html
 * Open SuperOffice and the web panel
-* Click refresh and soprotocol buttons
+* Click refresh or soprotocol buttons, or enter a document id and click 'open document'.
 * Observe the changes in the SuperOffice CRM client
 
 # Add to your partner application/web panel

@@ -16,4 +16,8 @@ SuperOffice.ClientCrossMessaging = SuperOffice.ClientCrossMessaging || {};
         sendCommand("soprotocol", protocol);
     }
 
+    ns.openDocument = function(documentId) {
+        sendCommand("openDocument", documentId);
+    }
+    
 }(SuperOffice.ClientCrossMessaging));
