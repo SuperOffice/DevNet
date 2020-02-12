@@ -3,8 +3,8 @@ SuperOffice.ClientCrossMessaging = SuperOffice.ClientCrossMessaging || {};
 
 (function(ns)
 {
-    var sendCommand = function(command, arguments) {
-        var message = { "command": command, "arguments": arguments};
+    var sendCommand = function(command, args) {
+        var message = { "command": command, "arguments": args};
         parent.postMessage(message, "*");
     }
 
@@ -19,5 +19,10 @@ SuperOffice.ClientCrossMessaging = SuperOffice.ClientCrossMessaging || {};
     ns.openDocument = function(documentId) {
         sendCommand("openDocument", documentId);
     }
+
+    ns.ajaxMethod = function(method,...args) {
+        var a = [method,...args];
+        sendCommand("ajaxMethod", a);
+        }
     
 }(SuperOffice.ClientCrossMessaging));

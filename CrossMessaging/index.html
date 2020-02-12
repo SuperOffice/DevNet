@@ -8,6 +8,7 @@
 <body>
     <button id="refresh">Refresh window</button>
     <button id="soprotocol">Execute soprotocol</button>
+    <button id="ajaxMethod">Execute Send As Email</button>
 
     <hr />
     <input type="number" value="0" id="documentId" />
@@ -28,12 +29,23 @@
             var documentId = document.getElementById("documentId").value ;
             SuperOffice.ClientCrossMessaging.openDocument(documentId);
         }
+
+        function sendAsEmail() {
+            // Send Documents as Email where doc ids 25 and 5
+            //SuperOffice.ClientCrossMessaging.ajaxMethod("SuperOffice.CRM.Web.AjaxMethods.Mail.GetSendDocumentsScript", "25;5"); 
+            
+            // Send email to person id 15
+            SuperOffice.ClientCrossMessaging.ajaxMethod("SuperOffice.CRM.Web.AjaxMethods.Mail.GetSendEMailToSelectionMembersScript", "15", ""); 
+        }
+
+        
         
         window.onload = function() {
             // Link up the event handlers
             document.getElementById("refresh").onclick = clickRefresh;
             document.getElementById("soprotocol").onclick = clickSoProtocol; 
             document.getElementById("openDocument").onclick = openDocument; 
+            document.getElementById("ajaxMethod").onclick = sendAsEmail; 
         };
 
     </script>
