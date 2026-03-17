@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SuperOffice.DevNet.CDD</RootNamespace>
     <AssemblyName>SuperOffice.DevNet.CDD</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,12 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SuperOffice.CD.DSL">
-      <HintPath>..\packages\SuperOffice.NetServer.Core.8.1.6499.1438\lib\net451\SuperOffice.CD.DSL.dll</HintPath>
-    </Reference>
-    <Reference Include="SuperOffice.CD.DSL.Implementation">
-      <HintPath>..\packages\SuperOffice.NetServer.Core.8.1.6499.1438\lib\net451\SuperOffice.CD.DSL.Implementation.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,6 +45,11 @@
     <Compile Include="ContinuousDatabaseAppDomainProxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StepInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SuperOffice.ContinuousDatabase">
+      <Version>10.5.5.982</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
